@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title> Project K</title>
+    <body style="background: url(https://cdn.discordapp.com/attachments/763911372827656234/1093155255706992720/katecollage.png) no-repeat; max-height: fit-content; max-width: fit-content; 0px; font-family: Verdana, Arial, san-serif; color: white;">
+
+        <script>
+            function validateForm() {
+                var pw1 = document.getElementById("pswd1").value;
+                var pw2 = document.getElementById("pswd2").value;
+                if (pw1 == "") {
+                    document.getElementById("message1").innerHTML = "*Fill the password please!";
+                    return false;
+                }
+                if (pw2 == "") {
+                    alert("Enter the password please!");
+                    return false;
+                }
+                if (pw1 != pw2) {
+                    alert("Passwords are not same.");
+                    document.getElementById('show');
+                    return false;
+                } else {
+                    open("home.html");
+                    window.close("pswd.html");
+                }
+            }
+        </script>
+        <body>
+            <div style="position:relative; left: 650px; top:300px;"><h3>Katelyn Elise Rodriguez</h3></div>
+            <form onsubmit="return validateForm()">
+                <!?Enter confirm password -->
+                <div style="position:relative; left: 690px; top:300px;"><input type="password" id="pswd2" value=""></div>
+                <div style="position:relative; left: 690px; top:285px;"><h6><p id="show" style="display:none">Hint: Dog's name (lower case)</p></h6></div>
+                <span id="message2" style="color:red"> </span> <br><br>
+                <!-- Click to verify valid password -->
+                <div style="position:fixed; left: 750px; top:410px;"><input type="submit" onclick="document.getElementById('show').style.display='block' " value="Sign in"></div>
+                <!-- password -->
+                <p hidden><td> Create Password* </td></p>
+                <center><p hidden><input type="password" id="pswd1" value="oreo"></center></p>
+                <span id="message1" style="color:red"> </span> <br><br>
+
+            </form>
+        </body>
+</html>
