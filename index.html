@@ -1,44 +1,49 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title> Project K</title>
-    <body style="background: url(https://cdn.discordapp.com/attachments/763911372827656234/1093155255706992720/katecollage.png) no-repeat; max-height: fit-content; max-width: fit-content; 0px; font-family: Verdana, Arial, san-serif; color: white;">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            background-color: #3EB489;
+            color: navy;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Countdown Timer</h1>
+    <p id="countdown"></p>
 
-        <script>
-            function validateForm() {
-                var pw1 = document.getElementById("pswd1").value;
-                var pw2 = document.getElementById("pswd2").value;
-                if (pw1 == "") {
-                    document.getElementById("message1").innerHTML = "*Fill the password please!";
-                    return false;
-                }
-                if (pw2 == "") {
-                    alert("Enter the password please!");
-                    return false;
-                }
-                if (pw1 != pw2) {
-                    alert("Passwords are not same.");
-                    document.getElementById('show');
-                    return false;
-                } else {
-                    open("websites/home.html");
-                    window.close("pswd.html");
-                }
+    <script>
+        // Set the date to countdown to
+        var countDownDate = new Date("April 27, 2023 15:41:00").getTime();
+
+        // Update the countdown every second
+        var x = setInterval(function () {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the countdown date
+            var distance = countDownDate - now;
+
+            // Calculate the days, hours, minutes and seconds left
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the countdown in the element with id="countdown"
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+            // Redirect to another website when the countdown reaches zero
+            if (distance < 0) {
+                clearInterval(x);
+                var encodedUrl = encodeURIComponent("%70%61%73%73%77%6F%72%64%2E%68%74%6D%6C");
+                window.location.href = decodeURIComponent(encodedUrl);
             }
-        </script>
-        <body>
-            <div style="position:relative; left: 650px; top:300px;"><h3>Katelyn Elise Rodriguez</h3></div>
-            <form onsubmit="return validateForm()">
-                <!?Enter confirm password -->
-                <div style="position:relative; left: 690px; top:300px;"><input type="password" id="pswd2" value=""></div>
-                <div style="position:relative; left: 690px; top:285px;"><h6><p id="show" style="display:none">Hint: Dog's name (lower case)</p></h6></div>
-                <span id="message2" style="color:red"> </span> <br><br>
-                <!-- Click to verify valid password -->
-                <div style="position:fixed; left: 750px; top:410px;"><input type="submit" onclick="document.getElementById('show').style.display='block' " value="Sign in"></div>
-                <!-- password -->
-                <p hidden><td> Create Password* </td></p>
-                <center><p hidden><input type="password" id="pswd1" value="oreo"></center></p>
-                <span id="message1" style="color:red"> </span> <br><br>
-
-            </form>
-        </body>
+        }, 1000);
+    </script>
+</body>
 </html>

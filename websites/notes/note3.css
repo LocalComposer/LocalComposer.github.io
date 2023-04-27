@@ -1,0 +1,19 @@
+body{
+	margin:0;
+	padding: 0;
+	background:#000;
+}
+
+p {
+	font-size:8px;
+	line-height:8px;
+	text-align:justify;
+	-webkit-background-size:cover;
+	background-size:cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background: url(https://media.discordapp.net/attachments/1047834662208290949/1097843170949218345/20230418_152325.jpg?width=525&height=800) no-repeat center;
+	background-attachment: fixed;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: rgb(225, 225, 255, 0);
+}
