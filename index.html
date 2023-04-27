@@ -38,8 +38,7 @@
             // Redirect to another website when the countdown reaches zero
             if (distance < 0) {
                 clearInterval(x);
-                var encodedUrl = encodeURIComponent("%70%61%73%73%77%6f%72%64%2e%68%74%6d%6c");
-                window.location.href = decodeURIComponent(encodedUrl);
+                window.location.href = atob("cGFzc3dvcmQuaHRtbA==");
             }
         }, 1000);
     </script>
