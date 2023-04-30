@@ -32,7 +32,7 @@
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
             // Display the countdown in the element with id="countdown"
-            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m ";
 
             // Redirect to another website when the countdown reaches zero
             if (distance < 0) {
