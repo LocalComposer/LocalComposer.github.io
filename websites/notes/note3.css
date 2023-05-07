@@ -1,19 +1,16 @@
-body{
-	margin:0;
+body {
+	margin: 0;
 	padding: 0;
-	background:#000;
+	background: #000;
 }
 
 p {
-	font-size:8px;
-	line-height:8px;
-	text-align:justify;
-	-webkit-background-size:cover;
-	background-size:cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background: url(https://media.discordapp.net/attachments/1047834662208290949/1097843170949218345/20230418_152325.jpg?width=525&height=800) no-repeat center;
+	font-size: 8px;
+	line-height: 8px;
+	text-align: justify;
+	background: url("images/kate3.png") no-repeat center/cover;
+	background-size: 40%; /* added this line to resize the picture */
 	background-attachment: fixed;
 	-webkit-background-clip: text;
-	-webkit-text-fill-color: rgb(225, 225, 255, 0);
+	-webkit-text-fill-color: rgba(225, 225, 255, 0);
 }

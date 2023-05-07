@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Click the Square</title>
+    <style>
+        #game-container {
+            width: 400px;
+            height: 400px;
+            background-color: #f0f0f0;
+            position: relative;
+        }
+
+        .square {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            display: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click the Square</h1>
+    <p>Click as many squares as you can in 30 seconds! <br>Try to beat the high score: 102</p>
+    <div id="game-container"></div>
+    <p>Time left: <span id="time">30</span></p>
+    <p>Score: <span id="score">0</span></p>
+    <button id="start-btn">Start</button>
+    <button id="restart-btn">Restart Game</button>
+    <script src="ctsscript.js"></script>
+</body>
+</html>

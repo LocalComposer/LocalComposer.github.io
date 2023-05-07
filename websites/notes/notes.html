@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Inbox</title>
+    <title>Notes</title>
     <style>
         a:hover {
             background-color: lightblue;
@@ -14,29 +14,27 @@
         <table border="0" cellpadding="0" cellspacing="0">
             <tr>
                 <td>
-                    <div style="position:fixed; left:550px; top:0px;">
-                        <a href="empty.html" target="Body">
-                            <img src="https://cdn.discordapp.com/attachments/763911372827656234/1093155203622109324/xuns.png">
-                    </div></a>
                     <div style="position:relative; left:5px; top:5px;">
                         <p>untitled1.txt<br> Title: Untitled 1<br> Description: R U Mine?</p>
                         <div style="position:fixed; left:5px; top:65px;">
-                            <a href="note1.html" target="_blank">
-                                <button type="button">Open untitled1.txt</button>
-                        </div></a>
+                            <button type="button" onclick="closeTabAndRedirect('note1.html')">Open untitled1.txt</button>
+                        </div>
                         <br>
                         <div style="position:relative; left:0px; top:0px;">
                             <p>untitled2.txt<br>Title: Untitled 2<br> Description: I Wanna Be Yours</p>
                             <div style="position:fixed; left:5px; top:170px;">
-                                <a href="note2.html" target="_blank">
-                                    <button type="button">Open untitled2.txt</button>
-                            </div></a>
+                                <button type="button" onclick="closeTabAndRedirect('note2.html')">Open untitled2.txt</button>
+                            </div>
+                        </div>
                 </td>
             </tr>
-            <td colspan="2">
-                <iframe name="Body" width="544" height="267" scrolling="no" style="border: none; position:relative; top: 100px; left: 50px;"></iframe>
-                </div>
-            </td>
         </table>
+
+        <script>
+            function closeTabAndRedirect(url) {
+                window.open(url, '_blank');
+                window.close();
+            }
+        </script>
     </body>
 </html>

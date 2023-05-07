@@ -1,29 +1,111 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Home</title>
+    <style>
+        body {
+            background: url(https://cdn.discordapp.com/attachments/763911372827656234/1093155253995700325/katecollage1.png) no-repeat;
+            max-height: fit-content;
+            max-width: fit-content;
+            font-family: Verdana, Arial, san-serif;
+            color: black;
+        }
+
+        #changelog {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
 </head>
-<body style="background: url(https://cdn.discordapp.com/attachments/763911372827656234/1093155253995700325/katecollage1.png) no-repeat; max-height: fit-content; max-width: fit-content; 0px; font-family: Verdana, Arial, san-serif; color: black;">
-    <body leftmargin="1%" topmargin="1%">
-        <div style="position:fixed; left:20px; top:30px;">
-            <h6>Inbox</h6>
-        </div>
-        <div style="position:fixed; left:20px; top:105px;">
-            <h6>Notes</h6>
-        </div>
-        <table border="0" cellpadding="0" cellspacing="0">
-            <tr>
-                <div style="position:relative; left:0px; top:0px;">
-                    <a href="inboxsites/inbox.html" target="Body">
-                        <img src="https://cdn.discordapp.com/attachments/763911372827656234/1093155174467506237/mail.png">
-                </div></a>
-                <div style="position:relative; left:0px; top:15px;">
-                    <a href="notes/notes.html" target="Body">
-                        <img src="https://cdn.discordapp.com/attachments/763911372827656234/1093155174190686269/notepad.png">
-                </div></a>
-            </tr>
-            <td colspan="2">
-                <iframe name="Body" width="600" height="700" scrolling="no" style="border: none; position:fixed; top: 10px; left: 700px;"></iframe></div>
-            </td>
-        </table>
-    </body>
+<body>
+    <div style="position:fixed; left:10px; top:15px;">
+        <h6>Inbox</h6>
+    </div>
+    <div style="position:absolute; left:5px; top:0px;">
+        <a href="#" onclick="openInbox()">
+            <img src="images/mail.png" width="48" height="50">
+        </a>
+    </div>
+    <div style="position:fixed; left:10px; top:80px;">
+        <h6>Notes</h6>
+    </div>
+    <div style="position:absolute; left:5px; top:50px;">
+        <a href="#" onclick="openNotes()">
+            <img src="images/notepad.png" width="48" height="50">
+        </a>
+    </div>
+    <div style="position:fixed; left:10px; top:140px;">
+        <h6>Click the <br>Square</h6>
+    </div>
+    <div style="position:absolute; left:5px; top:120px;">
+        <a href="#" onclick="openCTS()">
+            <img src="images/controllerwthisthis.png" width="48" height="50">
+        </a>
+    </div>
+    <div style="position:fixed; left:10px; top:220px;">
+        <h6>idk game</h6>
+    </div>
+    <div style="position:absolute; left:5px; top:200px;">
+        <a href="#" onclick="openIG()">
+            <img src="images/controllerwthisthis.png" width="48" height="50">
+        </a>
+    </div>
+    <div style="position:absolute; left:0px; bottom:50px;">
+        <a href="#" onclick="openChangeLog()">
+            <img src="images/ewankonapls.png" width="48" height="50">
+        </a>
+    </div>
+
+
+    <div style="position:fixed; left:5px; bottom:0px;">
+        <h6>Changelog</h6>
+    </div>
+    <script>
+        function openInbox() {
+            var popup = window.open('inboxsites/inbox.html', '_blank', 'resizable=no, scrollbars=no, width=590, height=300, left=1000, top=50');
+            popup.addEventListener('load', function () {
+                if (!popup.closed) {
+                    popup.focus();
+                }
+            });
+        }
+
+        function openNotes() {
+            var popup = window.open('notes/notes.html', '_blank', 'resizable=no, scrollbars=no, width=300, height=300, left=1000, top=50');
+            popup.addEventListener('load', function () {
+                if (!popup.closed) {
+                    popup.focus();
+                }
+            });
+        }
+
+        function openChangeLog() {
+            var popup = window.open('changelog.html', '_blank', 'resizable=no, scrollbars=no, width=500, height=600, left=1000, top=50');
+            popup.addEventListener('load', function () {
+                if (!popup.closed) {
+                    popup.focus();
+                }
+            });
+        }
+
+        function openCTS() {
+            var popup = window.open('cts/cts.html', '_blank', 'resizable=no, scrollbars=no, width=600, height=700, left=500, top=50');
+            popup.addEventListener('load', function () {
+                if (!popup.closed) {
+                    popup.focus();
+                }
+            });
+        }
+
+        function openIG() {
+            var popup = window.open('idk game/games.html', '_blank', 'resizable=no, scrollbars=yes, width=600, height=700, left=500, top=50');
+            popup.addEventListener('load', function () {
+                if (!popup.closed) {
+                    popup.focus();
+                }
+            });
+        }
+    </script>
+</body>
 </html>
