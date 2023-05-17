@@ -51,15 +51,21 @@
             <img src="images/controllerwthisthis.png" width="48" height="50">
         </a>
     </div>
-    <div style="position:absolute; left:0px; bottom:50px;">
+    <div style="position:fixed; left:10px; top:290px;">
+        <h6>Photos</h6>
+    </div>
+    <div style="position:absolute; left:5px; top:270px;">
+        <a href="#" onclick="openPhotos()">
+            <img src="images/notepad.png" width="48" height="50">
+        </a>
+    </div>
+    <div style="position:fixed; left:1470px; bottom:10px;">
+        <h6>Changelog</h6>
+    </div>
+    <div style="position:absolute; left:1480px; bottom:50px;">
         <a href="#" onclick="openChangeLog()">
             <img src="images/ewankonapls.png" width="48" height="50">
         </a>
-    </div>
-
-
-    <div style="position:fixed; left:5px; bottom:0px;">
-        <h6>Changelog</h6>
     </div>
     <script>
         function openInbox() {
@@ -100,6 +106,15 @@
 
         function openIG() {
             var popup = window.open('idk game/games.html', '_blank', 'resizable=no, scrollbars=yes, width=600, height=700, left=500, top=50');
+            popup.addEventListener('load', function () {
+                if (!popup.closed) {
+                    popup.focus();
+                }
+            });
+        }
+
+        function openPhotos() {
+            var popup = window.open('Photos/Photos.html', '_blank', 'resizable=no, scrollbars=no, width=1200, height=1100, left=500, top=0');
             popup.addEventListener('load', function () {
                 if (!popup.closed) {
                     popup.focus();

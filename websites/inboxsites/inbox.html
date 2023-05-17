@@ -3,30 +3,59 @@
 <head>
     <title>Inbox</title>
     <style>
-        a:hover {
-            background-color: lightblue;
-            padding: 0px 0px;
-            position: fixed;
+        .container1 {
+            width: 592px;
+            padding: 1px;
+            background-color: #f1f1f1;
+            border-radius: 1px;
+            cursor: pointer;
+            position: absolute;
+            top: 60px;
         }
+            .container1:hover {
+                background-color: lightblue;
+            }
+            .container1 a {
+                text-decoration: none;
+            }
+        .container2 {
+            width: 592px;
+            padding: 1px;
+            background-color: #f1f1f1;
+            border-radius: 1px;
+            cursor: pointer;
+            position: absolute;
+            top: 120px;
+        }
+
+            .container2:hover {
+                background-color: lightblue;
+            }
+
+            .container2 a {
+                text-decoration: none;
+            }
     </style>
 </head>
 <body style="background:#FFFFFF; margin:0px; color:black;">
     <div id="header" style="background: url(https://cdn.discordapp.com/attachments/763911372827656234/1093155255438540841/inboxheader.png) no-repeat; height: 131px;">
-        <table border="0" cellpadding="0" cellspacing="0">
-            <tr>
-                <td>
-                    </div>
-                    <div style="position:fixed; left:0px; top:60px;">
-                        <a href="#" onclick="openMail1();">
-                            <img src="https://cdn.discordapp.com/attachments/763911372827656234/1093155295414464563/lettermail1.png">
-                        </a>
-                    </div>
-                </td>
+        <div class="container1" onclick="openMail1()">
+            <h2>&nbsp;&nbsp;&nbsp;Rianne&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Letter #1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;March 31, 2023</h2>
+        </div>
+        </a>
     </div>
-
+    <div class="container2" onclick="openMail2()">
+        <h2>&nbsp;&nbsp;&nbsp;Rianne&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Letter #2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;March 31, 2023</h2>
+    </div>
+    </a>
+    </div>
     <script>
         function openMail1() {
             window.open('mail1.html', '_blank');
+            window.close();
+        }
+        function openMail2() {
+            window.open('mail2.html', '_blank');
             window.close();
         }
     </script>

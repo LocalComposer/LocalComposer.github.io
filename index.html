@@ -1,45 +1,35 @@
 <html>
 <head>
-    <title>Untitled Project K</title>
-    <style>
-        body {
-            background-color: #3EB489;
-            color: navy;
-            text-align: center;
-        }
-    </style>
+    <title>Password</title>
 </head>
-<body>
-    <h1>Countdown Timer</h1>
-    <p id="countdown"></p>
+<body style="background: url(https://cdn.discordapp.com/attachments/763911372827656234/1093155255706992720/katecollage.png) no-repeat; max-height: fit-content; max-width: fit-content; 0px; font-family: Verdana, Arial, san-serif; color: white;">
 
     <script>
-        // Set the date to countdown to
-        var countDownDate = new Date("May 18, 2023 00:00:00").getTime();
+        var attempts = 10;
+        var password = "oreo";
 
-        // Update the countdown every second
-        var x = setInterval(function () {
-
-            // Get today's date and time
-            var now = new Date().getTime();
-
-            // Find the distance between now and the countdown date
-            var distance = countDownDate - now;
-
-            // Calculate the days, hours, minutes and seconds left
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-            // Display the countdown in the element with id="countdown"
-            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m ";
-
-            // Redirect to another website when the countdown reaches zero
-            if (distance < 0) {
-                clearInterval(x);
-                window.location.href = ("password.html");
+        function checkPassword() {
+            var input = document.getElementById("passwordInput").value;
+            if (input === password) {
+                window.location.href = "websites/home.html";
+            } else {
+                attempts--;
+                if (attempts === 0) {
+                    window.location.href = "error.html";
+                } else {
+                    alert("Incorrect password. You have " + attempts + " attempts left.");
+                    alert("Hint: Katelyn's dog name. all small letters");
+                }
             }
-        }, 1000);
+        }
     </script>
+
+    <div style="position:absolute; top:50%; left:50%; transform: translate(-50%,-50%);">
+        <h2>Please enter the password to access the home page:</h2>
+        <input type="password" id="passwordInput">
+        <br><br>
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+
 </body>
 </html>

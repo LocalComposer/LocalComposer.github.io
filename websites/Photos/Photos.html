@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photos</title>
+    <style>
+        body {
+            background: #808080;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .gallery {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+            .gallery img {
+                max-width: 596px;
+                max-height: 1000px;
+            }
+
+        .caption {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .description {
+            position: absolute;
+            top: 70%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            font-size: 16px;
+            padding: 20px;
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .line {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: #fff;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+            .line:hover {
+                background-color: #aaa;
+            }
+
+            .line.active {
+                height: 40%;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+            .arrow.left {
+                left: -20px;
+            }
+
+            .arrow.right {
+                right: -20px;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="gallery">
+            <img src="image1.jpg" alt="Image 1">
+            <div class="caption">Caption for Image 1</div>
+            <div class="line"></div>
+            <div class="description">Description for Image 1</div>
+            <div class="arrow left">&lt;</div>
+            <div class="arrow right">&gt;</div>
+        </div>
+    </div>
+
+    <script>
+        const images = [
+            {
+                src: 'images/1.jpg', caption: 'My beautiful Scientist', description: "You must be a scientist because you've conducted a love experiment on me and the results are off the charts. With your intelligence and beauty, you've sparked a hypothesis in my heart that we could create the perfect chemistry together. Let's discover the formula for everlasting love, one experiment at a time."
+            },
+            {
+                src: 'images/2.jpg', caption: 'My cute and adorable Kitten', description: "You wearing my hat with those adorable cat ears has me feeling pretty lucky. It's like you've unlocked a whole new level of cuteness, and I can't help but paws and admire you.You've turned a simple accessory into a symbol of our affection, and now I can't resist the urge to give you a purrfectly sweet kiss."
+            },
+            {
+                src: 'images/3.jpg', caption: 'My gorgeous and beautiful and pretty Angel', description: "You sitting on that chair with those stunning golden angel wings has me feeling like I'm in heaven. Your beauty and grace are like that of an angel, and I can't help but feel blessed to have you in my life. I hope you'll let me be the devil on your shoulder, whispering sweet nothings in your ear, and always keeping you grounded in the moment."
+            },
+            {
+                src: 'images/4.jpg', caption: 'My breathtaking Photographer', description: "You're capturing all the moments with your camera lens, but it's you who's stealing the spotlight. You're the picture of perfection, with your beauty illuminating every shot you take."
+            },
+            {
+                src: 'images/5.jpg', caption: 'My cute little Cheerleader', description: "You light up the field with your energy and grace. Every time you cheer, my heart races at an unstoppable pace. Your spirit is infectious, and your moves are a sight to behold."
+            },
+            {
+                src: 'images/6.jpg', caption: 'My Kate and the egg', description: "Seeing you cuddle up with that egg plush makes me feel all warm and fuzzy inside. You're already the sweetest thing in my life, but with that plush in your arms, you're simply over-easy to love. Will you be my sunshine in the morning and keep my heart sunny-side up all day?"
+            },
+        ];
+
+        let currentIndex = 0;
+        const gallery = document.querySelector('.gallery');
+        const image = gallery.querySelector('img');
+        const caption = gallery.querySelector('.caption');
+        const description = gallery.querySelector('.description');
+        const line = gallery.querySelector('.line');
+        const arrows = gallery.querySelectorAll('.arrow');
+        // Set initial image and caption
+        image.src = images[currentIndex].src;
+        caption.textContent = images[currentIndex].caption;
+        description.textContent = images[currentIndex].description;
+
+        // Handle clicking on the line to show/hide description
+        line.addEventListener('click', () => {
+            if (description.style.opacity == 0) {
+                description.style.opacity = 1;
+                description.style.pointerEvents = 'auto';
+                line.classList.add('active');
+            } else {
+                description.style.opacity = 0;
+                description.style.pointerEvents = 'none';
+                line.classList.remove('active');
+            }
+        });
+
+        // Handle clicking on the arrows to navigate through images
+        arrows.forEach(arrow => {
+            arrow.addEventListener('click', () => {
+                if (arrow.classList.contains('left')) {
+                    currentIndex--;
+                    if (currentIndex < 0) {
+                        currentIndex = images.length - 1;
+                    }
+                } else {
+                    currentIndex++;
+                    if (currentIndex >= images.length) {
+                        currentIndex = 0;
+                    }
+                }
+
+                image.src = images[currentIndex].src;
+                caption.textContent = images[currentIndex].caption;
+                description.textContent = images[currentIndex].description;
+                description.style.opacity = 0;
+                description.style.pointerEvents = 'none';
+                line.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
