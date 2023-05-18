@@ -35,17 +35,39 @@
             .container2 a {
                 text-decoration: none;
             }
+        .container3 {
+            width: 592px;
+            padding: 1px;
+            background-color: #f1f1f1;
+            border-radius: 1px;
+            cursor: pointer;
+            position: absolute;
+            top: 180px;
+        }
+
+            .container3:hover {
+                background-color: lightblue;
+            }
+
+            .container3 a {
+                text-decoration: none;
+            }
     </style>
 </head>
 <body style="background:#FFFFFF; margin:0px; color:black;">
     <div id="header" style="background: url(https://cdn.discordapp.com/attachments/763911372827656234/1093155255438540841/inboxheader.png) no-repeat; height: 131px;">
         <div class="container1" onclick="openMail1()">
-            <h2>&nbsp;&nbsp;&nbsp;Rianne&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Letter #1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;March 31, 2023</h2>
+            <h2>&nbsp;&nbsp;&nbsp;Rianne&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Letter #1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;March 31</h2>
         </div>
         </a>
     </div>
     <div class="container2" onclick="openMail2()">
-        <h2>&nbsp;&nbsp;&nbsp;Rianne&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Letter #2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;March 31, 2023</h2>
+        <h2>&nbsp;&nbsp;&nbsp;Rianne&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Letter #2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;May 5</h2>
+    </div>
+    </a>
+    </div>
+    <div class="container3" onclick="openMail3()">
+        <h2>&nbsp;&nbsp;&nbsp;Rianne&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Letter #3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;May 18</h2>
     </div>
     </a>
     </div>
@@ -56,6 +78,10 @@
         }
         function openMail2() {
             window.open('mail2.html', '_blank');
+            window.close();
+        }
+        function openMail3() {
+            window.open('mail3.html', '_blank');
             window.close();
         }
     </script>
